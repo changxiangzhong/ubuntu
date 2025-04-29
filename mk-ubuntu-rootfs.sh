@@ -13,6 +13,7 @@ if [ ! $SOC ]; then
     echo "[3] rk3562"
     echo "[4] rk3566/rk3568"
     echo "[5] rk3588/rk3588s"
+    echo "[6] rk3288"
     echo "---------------------------------------------------------"
     read input
 
@@ -33,6 +34,9 @@ if [ ! $SOC ]; then
             ;;
         5)
             SOC=rk3588
+            ;;
+        6)
+            SOC=rk3288
             ;;
         *)
             echo 'input soc number error, exit !'
@@ -108,6 +112,10 @@ install_packages() {
         ISP=rkaiq_rk3588
         MALI=valhall-g610-g13p0
         MIRROR=carp-rk3588
+        ;;
+        rk3288)
+        MALI=midgard-t76x-r18p0-r1p0
+        ISP=rkisp
         ;;
     esac
 }
